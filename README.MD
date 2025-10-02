@@ -29,8 +29,9 @@ here’s the minimal Boot responsibilities to aim for:
 * Spring Boot uses this class to figure out where to start scanning for other beans/components/configs.
 * The ioc container automatically instantiates all beans and resolves dependencies.
 * With the root application class passed to the SpringcloneApplication run method,aqquire the the basepackage uri.with that uri scan and update the ioc container context.
-
+* See the whole defenition on the SpringCloneApplication.java file.
 ```java
+AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 String basePackage = mainClass.getPackageName();
 context.scan(basePackage);
 context.refresh();
@@ -39,3 +40,4 @@ for (String name : beans) {
    System.out.println("bean name:"+name);
 }
 ```
+## Adding own ioc container

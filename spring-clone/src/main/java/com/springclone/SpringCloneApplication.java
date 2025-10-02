@@ -1,5 +1,7 @@
 package com.springclone;
 
+import java.lang.reflect.Method;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class SpringCloneApplication {
@@ -22,6 +24,8 @@ public class SpringCloneApplication {
         for (String name : beans) {
             System.out.println("bean name:"+name);
         }
+        
+
         
         System.out.println("Spring Clone Boot finished starting!");
     }
