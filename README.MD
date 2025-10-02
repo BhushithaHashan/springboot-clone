@@ -25,6 +25,17 @@ here’s the minimal Boot responsibilities to aim for:
 
 ## Why need to pass the root class again to the SpringCloneAplication(Same as the real springboot)
 
-SpringClone.class is not the bean, it’s a pointer to your “application root” class.
+* SpringClone.class is not the bean, it’s a pointer to your “application root” class.
+* Spring Boot uses this class to figure out where to start scanning for other beans/components/configs.
+* The ioc container automatically instantiates all beans and resolves dependencies.
+* With the root application class passed to the SpringcloneApplication run method,aqquire the the basepackage uri.with that uri scan and update the ioc container context.
 
-Spring Boot uses this class to figure out where to start scanning for other beans/components/configs.
+```java
+String basePackage = mainClass.getPackageName();
+context.scan(basePackage);
+context.refresh();
+String[] beans = context.getBeanDefinitionNames();
+for (String name : beans) {
+   System.out.println("bean name:"+name);
+}
+```

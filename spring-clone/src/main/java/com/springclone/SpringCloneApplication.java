@@ -2,8 +2,6 @@ package com.springclone;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.springclone.bean.MyBean;
-
 public class SpringCloneApplication {
 
     public static void run(Class<?> mainClass, String[] args) {
@@ -20,9 +18,10 @@ public class SpringCloneApplication {
         
         //  Refresh container to initialize beans
         context.refresh();
-        MyBean myBean = context.getBean(MyBean.class);
-        Class<?> class1 = myBean.getClass();
-        System.out.println(class1.getSimpleName());
+        String[] beans = context.getBeanDefinitionNames();
+        for (String name : beans) {
+            System.out.println("bean name:"+name);
+        }
         
         System.out.println("Spring Clone Boot finished starting!");
     }
