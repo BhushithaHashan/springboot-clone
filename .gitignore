@@ -1,0 +1,20 @@
+Maven Project Files
+
+/target/
+IDE Files
+
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+/out/
+Operating System Files
+
+.DS_Store
+Thumbs.db
+Logs and Temp
+
+*.log
+temp/
+tomcat_base_temp/
