@@ -23,3 +23,8 @@ here’s the minimal Boot responsibilities to aim for:
 
 ---
 
+## Why need to pass the root class again to the SpringCloneAplication(Same as the real springboot)
+
+SpringClone.class is not the bean, it’s a pointer to your “application root” class.
+
+Spring Boot uses this class to figure out where to start scanning for other beans/components/configs.
