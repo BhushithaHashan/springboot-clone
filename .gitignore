@@ -1,5 +1,7 @@
 Maven Project Files
-
+.target/
+./target
+target/
 /target/
 .
 IDE Files
